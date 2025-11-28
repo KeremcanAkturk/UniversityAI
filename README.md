@@ -1,46 +1,65 @@
-🎓 İKÜ Kampüs Asistanı (v1.0)
-İstanbul Kültür Üniversitesi (İKÜ) öğrencileri için geliştirilmiş; yapay zeka destekli, gerçek zamanlı veriler sunan ve kampüs hayatını kolaylaştıran interaktif bir web asistanıdır.
+# 🎓 İKÜ Kampüs Asistanı (v1.0)
 
-🚀 Proje Hakkında
-Öğrencilerin dağınık bilgiler (servis saatleri, yemek listesi, akademik takvim vb.) arasında kaybolmasını önlemek amacıyla geliştirilmiştir. Doğal Dil İşleme (NLP) teknolojisi kullanan bu asistan, soruları anlar ve en doğru cevabı verir.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![AI](https://img.shields.io/badge/AI-Sentence--Transformers-green?style=for-the-badge)
 
-✨ Temel Özellikler
-🤖 Yapay Zeka Sohbet Botu: sentence-transformers ve Vektör Benzerliği (Cosine Similarity) kullanarak kullanıcı sorularını anlar. Sabit cevaplar yerine rastgele varyasyonlarla doğal bir sohbet deneyimi sunar.
+**İstanbul Kültür Üniversitesi (İKÜ)** öğrencileri için geliştirilmiş; yapay zeka destekli, gerçek zamanlı veriler sunan ve kampüs hayatını kolaylaştıran interaktif bir web asistanıdır.
 
-🚌 Akıllı Ring Servisi Sayacı: Statik bir liste yerine, anlık saate göre bir sonraki servisin kalkmasına kaç dakika kaldığını otomatik hesaplar.
+---
 
-🌤️ Canlı Hava Durumu: Open-Meteo API entegrasyonu ile kampüs bölgesinin hava durumunu anlık gösterir (15 dk önbellekleme ile donma yapmaz).
+## 🚀 Proje Hakkında
 
-🔐 Güvenli Giriş Sistemi: Regex tabanlı isim doğrulama ve oturum (session) yönetimi içerir.
+Öğrencilerin kampüs hayatındaki dağınık bilgiler (servis saatleri, yemek listesi, akademik takvim vb.) arasında kaybolmasını önlemek amacıyla geliştirilmiştir. **Doğal Dil İşleme (NLP)** teknolojisi kullanan bu asistan, soruları anlar ve en doğru cevabı verir.
 
-🎨 Modern UI/UX:
+---
 
-Sticky Sidebar: Sayfa kaydırılsa bile menü sabit kalır.
+## ✨ Temel Özellikler
 
-Auto-Scroll: Mesaj yazıldığında sayfa otomatik odaklanır.
+### 🤖 Yapay Zeka & Chatbot
+* **NLP Teknolojisi:** `sentence-transformers` ve **Vektör Benzerliği (Cosine Similarity)** kullanarak kullanıcı sorularını anlar.
+* **Doğal Sohbet:** Sabit cevaplar yerine rastgele varyasyonlarla robotik olmayan bir deneyim sunar.
+* **Hata Yönetimi:** Anlamadığı sorularda dürüstçe cevap vererek yanlış yönlendirme yapmaz.
 
-Karanlık Mod & Glassmorphism: Şık ve göz yormayan tasarım.
+### 🚌 Gerçek Zamanlı Araçlar
+* **Akıllı Ring Servisi Sayacı:** Statik bir liste yerine, anlık saate göre bir sonraki servisin kalkmasına **kaç dakika kaldığını** otomatik hesaplar.
+* **Canlı Hava Durumu:** Open-Meteo API entegrasyonu ile kampüs bölgesinin hava durumunu anlık gösterir (15 dk önbellekleme ile performans optimizasyonu sağlar).
 
-🧮 Öğrenci Araçları:
+### 🎨 Modern UI/UX Tasarımı
+* **Sticky Sidebar:** Sayfa aşağı kaydırılsa bile yan menü ve araçlar sabit kalarak kullanıcıyı takip eder.
+* **Auto-Scroll:** Mesaj yazıldığında sayfa otomatik olarak en son mesaja odaklanır.
+* **Güvenli Giriş:** Regex tabanlı isim doğrulama ve oturum (session) yönetimi içerir.
+* **Karanlık Mod:** Göz yormayan, "Glassmorphism" efektli şık tasarım.
 
-+/- Sistemine uygun GPA (Ortalama) Hesaplama.
+### 📚 Öğrenci Modülleri
+* **GPA Hesaplama:** Okulun (+/-) not sistemine tam uyumlu ortalama hesaplayıcı.
+* **Akademik Takvim:** Sınav ve tatil tarihlerini gösteren güncel takvim.
+* **Duyurular Panosu:** Kampüs ile ilgili anlık bilgilendirmeler.
 
-Güncel Akademik Takvim.
+---
 
-Duyurular Panosu.
+## 🛠️ Kullanılan Teknolojiler
 
-🛠️ Kullanılan Teknolojiler
-Bu proje tamamen Python dili ile geliştirilmiştir.
+Bu proje tamamen **Python** ekosistemi üzerine kurulmuştur.
 
-Teknoloji,Amaç
-<img width="507" height="124" alt="image" src="https://github.com/user-attachments/assets/ebdf1d8f-61d8-4597-83c2-2a6da4e10ac3" />
+| Teknoloji | Kullanım Amacı |
+| :--- | :--- |
+| **Streamlit** | Web arayüzü, frontend ve session yönetimi. |
+| **Sentence-Transformers** | (`all-MiniLM-L12-v2`) Metinleri vektöre çevirme ve yapay zeka işlemleri. |
+| **Requests** | Hava durumu API'sinden canlı veri çekmek için. |
+| **Regex (re)** | Kullanıcı girişi güvenlik kontrolleri için. |
+| **Streamlit Components** | JavaScript kodları ile otomatik kaydırma (auto-scroll) özelliği için. |
 
-💻 Kurulum ve Çalıştırma
-Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
+---
 
-Repoyu Klonlayın:
-**git clone https://github.com/kullaniciadin/iku-kampus-asistani.git**
-**cd iku-kampus-asistani**
+## 💻 Kurulum ve Çalıştırma
+
+Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyin:
+
+**1. Repoyu Klonlayın**
+```bash
+git clone [https://github.com/kullaniciadin/iku-kampus-asistani.git](https://github.com/kullaniciadin/iku-kampus-asistani.git)
+cd iku-kampus-asistani
 
 **Gerekli Kütüphaneleri Yükleyin:**
 **pip install streamlit sentence-transformers requests**
