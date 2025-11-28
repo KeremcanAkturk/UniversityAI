@@ -55,26 +55,32 @@ Bu proje tamamen **Python** ekosistemi üzerine kurulmuştur.
 ## 💻 Kurulum ve Çalıştırma
 
 Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyin:
+## 💻 Kurulum ve Çalıştırma
+
+Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyin:
 
 **1. Repoyu Klonlayın**
 ```bash
-git clone [https://github.com/kullaniciadin/iku-kampus-asistani.git](https://github.com/kullaniciadin/iku-kampus-asistani.git)
+git clone https://github.com/kullaniciadin/iku-kampus-asistani.git
 cd iku-kampus-asistani
+```
 
-**Gerekli Kütüphaneleri Yükleyin:**
-**pip install streamlit sentence-transformers requests**
-
-**Uygulamayı Başlatın:**
+2. Gerekli Kütüphaneleri Yükleyin
+```
+pip install streamlit sentence-transformers requests
+```
+3. Uygulamayı Başlatın
+```
 **streamlit run app.py**
-
+```
 📂 Proje Yapısı
-
+```
 iku-kampus-asistani/
 ├── app.py              # Ana uygulama motoru (Frontend + Backend)
 ├── veritabani.json     # Yapay zeka eğitim veri seti (Sorular & Cevaplar)
 ├── requirements.txt    # Gerekli kütüphaneler listesi
 └── README.md           # Proje dokümantasyonu
-
+```
 🧠 Nasıl Çalışır? (Teknik Detay)
 Vektörleştirme: veritabani.json içindeki tüm sorular, uygulama başladığında @st.cache_resource sayesinde bir kez vektör uzayına çevrilir ve RAM'e kaydedilir.
 
