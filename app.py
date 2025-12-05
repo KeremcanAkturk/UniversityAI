@@ -11,7 +11,7 @@ import google.generativeai as genai
 import pandas as pd
 import time
 
-SABIT_API_KEY = "AIzaSyCvux6blhHU1rNaQlMX6unO7bCeI7fVHTU"
+SABIT_API_KEY = "SİZİN API KEYİNİZ"
 ADMIN_SIFRESI = "BEŞİKTAŞ"
 
 # --- 1. SAYFA AYARLARI ---
@@ -503,4 +503,5 @@ with tab5:
             # Tüm tabloyu göster
             conn = sqlite3.connect(db_yolu)
             st.dataframe(pd.read_sql_query("SELECT * FROM Sorular", conn), use_container_width=True)
+
             conn.close()
