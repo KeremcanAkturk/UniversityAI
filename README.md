@@ -1,102 +1,120 @@
-# 🎓 İKÜ Kampüs Asistanı (v1.0)
+# 🎓 İKÜ Kampüs Asistanı (v2.0)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![AI](https://img.shields.io/badge/AI-Sentence--Transformers-green?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-**İstanbul Kültür Üniversitesi (İKÜ)** öğrencileri için geliştirilmiş; yapay zeka destekli, gerçek zamanlı veriler sunan ve kampüs hayatını kolaylaştıran interaktif bir web asistanıdır.
+**İstanbul Kültür Üniversitesi (İKÜ)** öğrencileri için geliştirilmiş; **Google Gemini LLM** destekli, veritabanı yönetimli ve gerçek zamanlı kampüs asistanıdır.
+
+Geleneksel chatbotların aksine, bu asistan **RAG (Retrieval-Augmented Generation)** mimarisini kullanır. Yani okul hakkındaki bilgileri kendi veritabanından doğrular ve Google Gemini'nin doğal dil yeteneği ile öğrenciye sunar.
 
 ---
 
-## 🚀 Proje Hakkında
-
-Öğrencilerin kampüs hayatındaki dağınık bilgiler (servis saatleri, yemek listesi, akademik takvim vb.) arasında kaybolmasını önlemek amacıyla geliştirilmiştir. **Doğal Dil İşleme (NLP)** teknolojisi kullanan bu asistan, soruları anlar ve en doğru cevabı verir.
+## 🚀 Yenilikler (v2.0)
+* **🧠 Hibrit Zeka:** Sadece önceden yazılmış cevapları vermez; veritabanındaki bilgiyi okur, yorumlar ve Gemini AI ile sohbet eder gibi cevaplar.
+* **🔐 Yönetici (Admin) Paneli:** Şifre korumalı panel üzerinden kod yazmadan yeni bilgi eklenebilir.
+* **📂 Excel/CSV ile Toplu Veri Yükleme:** Yüzlerce akademik veriyi (hoca listesi, dersler vb.) tek tıkla sisteme yükleme özelliği.
+* **💾 SQLite Veritabanı:** Veriler kalıcı olarak `.db` dosyasında tutulur, uygulama kapansa bile kaybolmaz.
 
 ---
 
 ## ✨ Temel Özellikler
 
-### 🤖 Yapay Zeka & Chatbot
-* **NLP Teknolojisi:** `sentence-transformers` ve **Vektör Benzerliği (Cosine Similarity)** kullanarak kullanıcı sorularını anlar.
-* **Doğal Sohbet:** Sabit cevaplar yerine rastgele varyasyonlarla robotik olmayan bir deneyim sunar.
-* **Hata Yönetimi:** Anlamadığı sorularda dürüstçe cevap vererek yanlış yönlendirme yapmaz.
+### 🤖 Yapay Zeka & RAG Mimarisi
+* **Akıllı Vektör Arama:** `sentence-transformers` kullanarak kullanıcının sorusunu matematiksel vektöre çevirir ve veritabanındaki en alakalı bilgiyi bulur.
+* **Google Gemini Pro Entegrasyonu:** Bulunan bilgiyi alır, öğrenciye samimi ve doğal bir dille açıklar.
+* **Dinamik Hafıza:** Admin panelinden eklenen bir bilgi anında AI tarafından öğrenilir.
 
-### 🚌 Gerçek Zamanlı Araçlar
-* **Akıllı Ring Servisi Sayacı:** Statik bir liste yerine, anlık saate göre bir sonraki servisin kalkmasına **kaç dakika kaldığını** otomatik hesaplar.
-* **Canlı Hava Durumu:** Open-Meteo API entegrasyonu ile kampüs bölgesinin hava durumunu anlık gösterir (15 dk önbellekleme ile performans optimizasyonu sağlar).
+### 🛠️ Yönetim ve Admin Paneli
+* **Güvenli Giriş:** Özel yönetici şifresi ile erişilen panel.
+* **Veri Yönetimi:** Tek tek soru-cevap ekleme, düzenleme ve ID ile silme özelliği.
+* **Bulk Upload:** `.xlsx` veya `.csv` dosyalarını sürükle-bırak yöntemiyle veritabanına işleme.
 
-### 🎨 Modern UI/UX Tasarımı
-* **Sticky Sidebar:** Sayfa aşağı kaydırılsa bile yan menü ve araçlar sabit kalarak kullanıcıyı takip eder.
-* **Auto-Scroll:** Mesaj yazıldığında sayfa otomatik olarak en son mesaja odaklanır.
-* **Güvenli Giriş:** Regex tabanlı isim doğrulama ve oturum (session) yönetimi içerir.
-* **Karanlık Mod:** Göz yormayan, "Glassmorphism" efektli şık tasarım.
+### 🚌 Öğrenci Dostu Araçlar
+* **Ring Servisi Sayacı:** Anlık saate göre bir sonraki servisin kalkmasına **kaç dakika kaldığını** otomatik hesaplar.
+* **Canlı Hava Durumu:** Kampüs bölgesinin anlık hava durumunu gösterir.
+* **GPA Hesaplama & Takvim:** Not ortalaması hesaplayıcı ve akademik takvim entegrasyonu.
 
-### 📚 Öğrenci Modülleri
-* **GPA Hesaplama:** Okulun (+/-) not sistemine tam uyumlu ortalama hesaplayıcı.
-* **Akademik Takvim:** Sınav ve tatil tarihlerini gösteren güncel takvim.
-* **Duyurular Panosu:** Kampüs ile ilgili anlık bilgilendirmeler.
+### 🎨 UI/UX Tasarımı
+* **Oto-Scroll (JavaScript):** Mesajlaşıldığında ekran otomatik olarak en son mesaja kayar.
+* **Responsive Yan Menü:** Kullanıcıyı takip eden araçlar menüsü.
 
 ---
 
 ## 🛠️ Kullanılan Teknolojiler
 
-Bu proje tamamen **Python** ekosistemi üzerine kurulmuştur.
-
 | Teknoloji | Kullanım Amacı |
 | :--- | :--- |
-| **Streamlit** | Web arayüzü, frontend ve session yönetimi. |
-| **Sentence-Transformers** | (`all-MiniLM-L12-v2`) Metinleri vektöre çevirme ve yapay zeka işlemleri. |
-| **Requests** | Hava durumu API'sinden canlı veri çekmek için. |
-| **Regex (re)** | Kullanıcı girişi güvenlik kontrolleri için. |
-| **Streamlit Components** | JavaScript kodları ile otomatik kaydırma (auto-scroll) özelliği için. |
+| **Streamlit** | Modern web arayüzü ve session yönetimi. |
+| **Google Generative AI** | (Gemini 1.5 Pro) Doğal dil üretimi ve sohbet yeteneği. |
+| **Sentence-Transformers** | Metinleri vektöre çevirme (Embedding) ve benzerlik araması. |
+| **SQLite3** | Soruların ve cevapların tutulduğu yerel veritabanı. |
+| **Pandas & Openpyxl** | Excel ve CSV dosyalarını işlemek ve tablo yönetimi için. |
 
 ---
 
 ## 💻 Kurulum ve Çalıştırma
 
-Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyin:
-## 💻 Kurulum ve Çalıştırma
-
-Projeyi kendi bilgisayarınızda test etmek için aşağıdaki adımları izleyin:
+Projeyi kendi bilgisayarınızda çalıştırmak için:
 
 **1. Repoyu Klonlayın**
 ```bash
-git clone https://github.com/kullaniciadin/iku-kampus-asistani.git
+git clone [https://github.com/kullaniciadin/iku-kampus-asistani.git](https://github.com/kullaniciadin/iku-kampus-asistani.git)
 cd iku-kampus-asistani
 ```
 
-2. Gerekli Kütüphaneleri Yükleyin
+**2. Gerekli Kütüphaneleri Yükleyin**
 ```
-pip install streamlit sentence-transformers requests
+pip install streamlit google-generativeai sentence-transformers pandas openpyxl
 ```
-3. Uygulamayı Başlatın
+
+
+**3. API Anahtarını Ayarlayın app.py dosyasını açın ve Google AI Studio'dan aldığınız API anahtarını ilgili alana yapıştırın:**
 ```
-**streamlit run app.py**
+SABIT_API_KEY = "BURAYA_GOOGLE_API_KEY_GELECEK"
 ```
+
+**4. Uygulamayı Başlatın**
+```
+streamlit run app.py
+# Veya oluşturulan Baslat.bat dosyasına çift tıklayın.
+```
+
 📂 Proje Yapısı
 ```
 iku-kampus-asistani/
-├── app.py              # Ana uygulama motoru (Frontend + Backend)
-├── veritabani.json     # Yapay zeka eğitim veri seti (Sorular & Cevaplar)
-├── requirements.txt    # Gerekli kütüphaneler listesi
-└── README.md           # Proje dokümantasyonu
+├── app.py              # Ana uygulama (Frontend + Backend + AI Mantığı)
+├── kampus.db           # SQLite Veritabanı (Sorular ve Cevaplar burada tutulur)
+├── Baslat.bat          # Tek tıkla kurulum ve başlatma dosyası
+├── requirements.txt    # Kütüphane listesi
+└── README.md           # Dokümantasyon
 ```
-🧠 Nasıl Çalışır? (Teknik Detay)
-Vektörleştirme: veritabani.json içindeki tüm sorular, uygulama başladığında @st.cache_resource sayesinde bir kez vektör uzayına çevrilir ve RAM'e kaydedilir.
 
-Benzerlik Arama: Kullanıcı bir soru sorduğunda (Örn: "Servis kaçta?"), bu cümle de vektöre çevrilir ve veritabanındaki en yakın vektörle (Cosine Similarity) eşleştirilir.
+###🧠 Nasıl Çalışır? (Teknik Akış)
+Soru Sorma: Kullanıcı bir soru sorar (Örn: "Erdem Yücesan kimdir?").
 
-Eşik Değeri (Threshold): Eğer benzerlik oranı %45'in altındaysa, bot "Bunu anlamadım" diyerek yanlış cevap vermekten kaçınır.
+Vektör Arama: Sistem, bu soruyu vektöre çevirir ve kampus.db içindeki en benzer soruyu bulur.
 
-📷 Ekran Görüntüleri
+Güven Kontrolü: Benzerlik oranı %40'ın üzerindeyse, bulunan veriyi "Bağlam (Context)" olarak alır.
 
-<img width="1917" height="950" alt="image" src="https://github.com/user-attachments/assets/5e3031f7-bfd4-4667-91e5-626f98a45646" />
+LLM Yanıtı: Bulunan bilgi ve kullanıcının sorusu Google Gemini'ye gönderilir.
 
-<img width="1525" height="749" alt="image" src="https://github.com/user-attachments/assets/22820f83-7807-4a65-8ba5-2d2af0a27f90" />
-
-<img width="1551" height="423" alt="image" src="https://github.com/user-attachments/assets/35fb75db-e636-4d2c-8b75-910e7cd0077d" />
+Cevap: Gemini, elindeki kesin bilgiyi kullanarak öğrenciye doğal bir cevap üretir.
 
 
+
+###📷 Ekran Görüntüleri
+
+
+
+<img width="1916" height="937" alt="image" src="https://github.com/user-attachments/assets/f356d10f-4dbf-4f68-a928-6446162fee73" />
+
+<img width="1599" height="534" alt="image" src="https://github.com/user-attachments/assets/9c179222-bdce-4a0e-85b7-f89dc8ef27da" />
+
+<img width="1591" height="643" alt="image" src="https://github.com/user-attachments/assets/d50f7e06-ae27-4674-bae2-865452a8ce89" />
+
+<img width="186" height="136" alt="image" src="https://github.com/user-attachments/assets/473d4b84-36e8-48b1-961f-393d609dc32f" />
 
 
 
